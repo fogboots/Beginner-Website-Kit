@@ -282,7 +282,7 @@
   #cs-navigation.cs-active:after {
     width: 100%;
     max-width: 100%;
-    background-color: #484848;
+    background-color: var(--primary);
   }
   #cs-navigation.cs-active:before {
     height: 150vh;
@@ -405,7 +405,7 @@
     height: clamp(2.75rem, 6vw, 3rem);
     margin: 0.75rem 0 0 auto;
     border-radius: 0.25rem;
-    background-color: #484848;
+    background-color: var(--primary);
     border: none;
     display: flex;
     justify-content: center;
@@ -1088,7 +1088,7 @@
   #cs-footer-269 {
     /* 60px - 100px top and bottom */
     padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
-    background-color: #1a1a1a;
+    background-color: var(--primary);
     /* Navigation Links */
     /* Contact Links */
   }
