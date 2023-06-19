@@ -6,9 +6,9 @@
 @media only screen and (min-width: 0rem) {
     // Website colors and base variables
     :root {
-        --primary: #853A3A;
-        --primaryLight: #001F3F;
-        --secondary: #E4A95F;
+        --primary: #145cd0;
+        --primaryLight: #0a6ad9;
+        --secondary: #4c6acef9;
         --secondaryLight: #FFBA43;
         --headerColor: #1a1a1a;
         --bodyTextColor: #4E4B66;
@@ -271,7 +271,6 @@
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
 
-
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
     body {
@@ -279,8 +278,10 @@
             overflow: hidden;
         }
     }
-
+    
     #cs-navigation {
+        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+        font-family: 'Roboto', 'Arial', sans-serif;
         width: 100%;
         padding: (12/16rem) (16/16rem);
         /* prevents padding from affecting height and width */
@@ -290,6 +291,22 @@
         position: fixed;
         z-index: 10000;
 
+        &:after {
+            /* on hover green bar */
+            content: '';
+            width: 40%;
+            max-width: (146/16rem);
+            height: 100%;
+            background: var(--primary);
+            opacity: 1;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0%;
+            z-index: -1;
+            transition: width .2s, max-width .3s, background-color .3s;
+        }
+
         &:before {
             content: '';
             width: 100%;
@@ -297,25 +314,43 @@
             background: rgba(0, 0, 0, .6);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
+            opacity: 0;
             position: absolute;
             display: block;
-            top: 100%;
+            top: 0;
             right: 0;
-            z-index: -1100;
-            opacity: 0;
-            transition: height .5s, opacity .5s;
+            z-index: -11;
+            transition: height .5s, opacity .3s;
         }
 
+
         &.cs-active {
+            &:after {
+                width: 100%;
+                max-width: 100%;
+                background-color: #484848;
+            }
+
             &:before {
                 height: 150vh;
                 opacity: 1;
             }
 
+            .cs-top-bar {
+                z-index: initial;
+                &:before {
+                    display: none;
+                }
+            }
+
+            .cs-link {
+                color: var(--bodyTextColorWhite);
+            }
+
             .cs-ul-wrapper {
                 opacity: 1;
                 transform: scaleY(1);
-                transition-delay: .15s;
+                transition-delay: .2s;
             }
 
             .cs-li {
@@ -324,24 +359,57 @@
             }
         }
 
-        .cs-container {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+        &.scroll {
+            .cs-top-bar {
+                height: 0;
+                opacity: 0;
+                padding-bottom: 0;
+                overflow: hidden;
+                &:before {
+                    opacity: 0;
+                }
+            }
+
+            .cs-toggle {
+                margin-top: 0;
+            }
+        }
+
+        .cs-top-bar {
+            margin: 0;
+            padding: 0 0 (12/16rem) 0;
+            position: relative;
+            transition: height .3s, padding-bottom .3s, opacity .3s;
+            z-index: -3;
+            &:before {
+                /* grey line */
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: #EFF1F0;
+                opacity: 1;
+                position: absolute;
+                display: block;
+                bottom: 0;
+                right: (-16/16rem);
+                z-index: -2;
+                transition: opacity .3s;
+            }
         }
 
         .cs-logo {
             width: 40%;
             max-width: (146/16rem);
             height: 100%;
-            margin: 0 auto 0 0;
-            padding: 0;
+            padding: (12/16rem) (16/16rem);
             /* prevents padding from affecting height and width */
             box-sizing: border-box;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
             z-index: 10;
 
             img {
@@ -352,13 +420,58 @@
             }
         }
 
+        .cs-item {
+            list-style: none;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .cs-remove {
+            display: none;
+        }
+
+        .cs-picture {
+            width: (32/16rem);
+            height: (32/16rem);
+            margin-right: (16/16rem);
+            border-radius: 50%;
+            background-color: #EFF1F0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transition: background-color .3s;
+        }
+
+        .cs-icon {
+            width: (16/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-header {
+            display: none;
+        }
+        
+        .cs-link {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            text-decoration: none;
+            margin: 0;
+            color: var(--bodyTextColor);
+            display: block;
+            transition: color .3s;
+        }
+
         .cs-toggle {
             /* 44px - 48px */
             width: clamp(2.75rem, 6vw, 3rem);
             height: clamp(2.75rem, 6vw, 3rem);
-            margin: 0 0 0 auto;
+            margin: (12/16rem) 0 0 auto;
             border-radius: (4/16rem);
-            background-color: transparent;
+            background-color: #484848;
             border: none;
             display: flex;
             justify-content: center;
@@ -395,7 +508,7 @@
             width: 100%;
             height: 2px;
             border-radius: 2px;
-            background-color: #1a1a1a;
+            background-color: #fff;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -428,8 +541,6 @@
 
         .cs-ul-wrapper {
             width: 100%;
-            height: auto;
-            padding-bottom: (48/20em);
             opacity: 0;
             background-color: #fff;
             box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
@@ -445,7 +556,7 @@
 
         .cs-ul {
             margin: 0;
-            padding: (48/16rem) 0 0 0;
+            padding: (48/16rem) 0 (48/16rem) 0;
             width: 100%;
             height: auto;
             max-height: 65vh;
@@ -458,14 +569,259 @@
         }
 
         .cs-li {
-            width: 100%;
-            text-align: center;
             list-style: none;
+            width: 100%;
             margin-right: 0;
             /* transition from these values */
             transform: translateY(-70/16rem);
             opacity: 0;
             transition: transform .6s, opacity .9s;
+
+            &:nth-of-type(1) {
+                transition-delay: .05s;
+            }
+            &:nth-of-type(2) {
+                transition-delay: .1s;
+            }
+            &:nth-of-type(3) {
+                transition-delay: .15s;
+            }
+            &:nth-of-type(4) {
+                transition-delay: .2s;
+            }
+            &:nth-of-type(5) {
+                transition-delay: .25s;
+            }
+            &:nth-of-type(6) {
+                transition-delay: .3s;
+            }
+            &:nth-of-type(7) {
+                transition-delay: .35s;
+            }
+            &:nth-of-type(8) {
+                transition-delay: .4s;
+            }
+            &:nth-of-type(9) {
+                transition-delay: .45s;
+            }
+        }
+
+        .cs-li-link {
+            /* 16px - 24px */
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            line-height: 1.2em;
+            text-decoration: none;
+            margin: 0;
+            color: var(--headerColor);
+            display: inline-block;
+            position: relative;
+
+            &:before {
+                /* active state underline */
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: currentColor;
+                opacity: 1;
+                position: absolute;
+                display: none;
+                bottom: (-2/16rem);
+                left: 0;
+            }
+
+            &.cs-active {
+                &:before {
+                    display: block;
+                }
+            }
+        }
+
+        .cs-button-solid {
+            display: none;
+        }
+    }
+
+}
+
+/* Tablet - 650px - 1023px */
+@media only screen and (min-width: 40.625rem) and (max-width: 63.9375rem) {
+    #cs-navigation {
+        .cs-top-bar {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+        }
+
+        .cs-item {
+            position: relative;
+
+            &:nth-of-type(2) {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                /* divider line */
+                content: '';
+                width: 1px;
+                height: 100%;
+                margin: 0 (16/16rem);
+                background: #EFF1F0;
+                opacity: 1;
+                position: relative;
+                display: block;
+            }
+        }
+
+        .cs-picture {
+            display: flex;
+        }
+
+        .cs-ul {
+            padding-top: (75/16rem);
+            gap: (32/16rem);
+        }
+
+        .cs-li-link {
+            font-size: (24/16rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---     Navigation Dropdown    -->
+<--- -------------------------- -*/ 
+
+/* Mobile - 1023px */
+@media only screen and (max-width: 63.9375rem) {
+    #cs-navigation {
+        .cs-li {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .cs-dropdown {
+            position: relative;
+            color: var(--bodyTextColorWhite);
+            &.cs-active {
+                .cs-drop-ul {
+                    height: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    margin: (12/16rem) 0 0 0;
+                    padding: (12/16rem) 0;
+                }
+
+                .cs-drop-link {
+                    opacity: 1;
+                }
+            }
+
+            .cs-li-link {
+                position: relative;
+                transition: opacity .3s;
+            }
+        }
+
+        .cs-drop-icon {
+            width: (15/16rem);
+            height: auto;
+            position: absolute;
+            top: 50%;
+            right: (-20/16rem);
+            transform: translateY(-50%);
+        }
+
+        .cs-drop-ul {
+            width: 100%;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: center;
+            gap: (12/16rem);
+            transition: padding .3s, margin .3s, height .3s, opacity .3s, visibility .3s;
+        }
+
+        .cs-drop-li {
+            list-style: none;
+        }
+
+        .cs-li-link {
+            &.cs-drop-link {
+                /* 14px - 16px */
+                font-size: clamp(.875rem, 2vw, 1.25rem);
+                color: #fff;
+            }
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #cs-navigation {
+        .cs-dropdown {
+            position: relative;
+            &:hover {
+                cursor: pointer;
+                .cs-drop-ul {
+                    transform: scaleY(1);
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .cs-drop-li {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .cs-drop-icon {
+            width: (15/16rem);
+            height: auto;
+            display: inline-block;
+        }
+
+        .cs-drop-ul {
+            min-width: (200/16rem);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
+            border-bottom: 5px solid var(--primary);
+            /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the cs-drop-li so they don't have weird scattered animations */
+            // columns: 2;
+            position: absolute;
+            top: 100%;
+            z-index: -100;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform .3s, visibility .3s, opacity .3s;
+        }
+
+        .cs-drop-li {
+            list-style: none;
+            font-size: (16/16rem);
+            text-decoration: none;
+            opacity: 0;
+            width: 100%;
+            height: auto;
+            color: var(--bodyTextColor);
+            display: block;
+            transform: translateY(-10/16rem);
+            transition: opacity .6s, transform .6s;
 
             &:nth-of-type(1) {
                 transition-delay: .05s;
@@ -509,63 +865,26 @@
         }
 
         .cs-li-link {
-            /* 16px - 24px */
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            line-height: 1.2em;
-            text-decoration: none;
-            margin: 0;
-            color: var(--headerColor);
-            display: inline-block;
-            position: relative;
-
-            &:before {
-                /* active state underline */
-                content: '';
+            &.cs-drop-link {
+                font-size: (16/16rem);
+                white-space: nowrap;
+                line-height: 1.5em;
+                text-decoration: none;
                 width: 100%;
-                height: 1px;
-                background: var(--secondary);
-                opacity: 1;
-                position: absolute;
-                display: none;
-                bottom: (-2/16rem);
-                left: 0;
-            }
-
-            &.cs-active {
-                &:before {
-                    display: block;
+                padding: (12/16rem);
+                /* prevents padding from affecting height and width */
+                box-sizing: border-box;
+                color: var(--bodyTextColor);
+                display: block;
+                transition: color .3s, background-color .3s;
+    
+                &:hover {
+                    background-color: #f7f7f7;
                 }
-            }
-        }
-
-        .cs-button-solid {
-            display: none;
-        }
-    }
-
-}
-
-/* Dark Mode */
-@media only screen and (max-width: 63.9375rem) {
-    body.dark-mode {
-        #cs-navigation {
-            background-color: var(--dark);
-
-            .cs-logo {
-                /* makes it white */
-                filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-line {
-                background-color: #fff;
-            }
-            
-            .cs-ul-wrapper {
-                background-color: var(--medium);
-            }
-
-            .cs-li-link {
-                color: var(--bodyTextColorWhite);
+    
+                &:before {
+                    display: none;
+                }
             }
         }
     }
@@ -578,23 +897,35 @@
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #cs-navigation {
+        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+        font-family: 'Roboto', 'Arial', sans-serif;
         width: 100%;
-        padding: 0 (16/16rem);
+        padding: (16/16rem) (16/16rem) 0 (16/16rem);
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         background-color: #fff;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         position: fixed;
         z-index: 10000;
+        transition: padding-top .3s;
 
-        .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: (24/16rem);
+        &.scroll {
+            padding-top: 0;
+            .cs-top-bar {
+                height: 0;
+                opacity: 0;
+                padding-bottom: 0;
+                margin-bottom: 0;
+                overflow: hidden;
+                transform: translateY(-50/16rem);
+                &:before {
+                    width: 0;
+                }
+            }
+
+            .cs-toggle {
+                margin-top: 0;
+            }
         }
 
         .cs-toggle {
@@ -603,14 +934,19 @@
 
         .cs-logo {
             width: 18.4%;
-            max-width: (350/16rem);
-            height: (65/16rem);
-            /* margin-right auto pushes everything away from it to the right */
-            margin: 0 auto 0 0;
-            padding: 0;
+            max-width: (320/16rem);
+            height: 100%;
+            /* 32px - 48px */
+            padding: (16/16rem) clamp(2rem, 3vw, 3rem);
+            background-color: var(--primary);
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
             z-index: 100;
 
             img {
@@ -621,9 +957,119 @@
             }
         }
 
+        .cs-top-bar {
+            width: 100%;
+            margin: 0;
+            padding: 0 0 (16/16rem) 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            transition: height .3s, opacity .3s, padding-bottom .3s, margin-bottom .3s, transform .3s;
+            &:before {
+                /* grey line */
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: #EFF1F0;
+                opacity: 1;
+                position: absolute;
+                display: block;
+                bottom: 0;
+                right: (-16/16rem);
+                z-index: -2;
+                transition: width .3s;
+            }
+        }
+
+        .cs-item {
+            list-style: none;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            &:last-of-type {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                .cs-picture {
+                    transform: scale(1.1);
+                }
+            }
+
+            &:after {
+                /* divider line */
+                content: '';
+                width: 1px;
+                height: (48/16rem);
+                /* 24px - 44px */
+                margin: 0 clamp(1.5rem, 5vw, 2.75rem);
+                background: #EFF1F0;
+                opacity: 1;
+                position: relative;
+                display: block;
+            }
+        }
+
+        .cs-picture {
+            width: (48/16rem);
+            height: (48/16rem);
+            margin-right: (16/16rem);
+            border-radius: 50%;
+            background-color: #EFF1F0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform .3s;
+        }
+
+        .cs-icon {
+            width: (24/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-header {
+            font-size: (16/16rem);
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+            display: block;
+        }
+        
+        .cs-link {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            text-decoration: none;
+            margin: 0;
+            color: var(--bodyTextColor);
+            display: block;
+            transition: color .3s;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .cs-bottom-bar {
+            width: 100%;
+            /* 235px - 420px */
+            padding: 0 0 0 clamp(14.6875rem, 23vw, 26.25rem);
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: (32/16rem);
+        }
+
         .cs-ul {
             width: 100%;
-            margin: 0 32/16rem 0 0;
+            margin: 0;
             padding: 0;
             display: flex;
             justify-content: flex-start;
@@ -634,9 +1080,14 @@
 
         .cs-li {
             list-style: none;
-            padding: 32/16rem 0;
+            padding: (32/16rem) 0;
             /* prevent flexbox from squishing it */
             flex: none;
+            &:last-of-type {
+                /* pushes the button to the far roght */
+                margin-left: auto;
+                padding: 0;
+            }
         }
 
         .cs-li-link {
@@ -674,32 +1125,54 @@
                 transition: width .3s;
             }
         }
-    }
-}
 
-/* Dark Mode */
-@media only screen and (min-width: 64rem) {
-    body.dark-mode {
-        #cs-navigation {
-            background-color: var(--dark);
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875em, 5.5vw, 3.5em);
+            text-decoration: none;
+	    	font-weight: 700;
+	        text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
 
-            .cs-logo {
-                /* makes it turn white */
-                filter: grayscale(1) brightness(1000%);
+            &:before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width .3s;
             }
 
-            .cs-li-link {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-li-link {
+            &:hover {
                 &:before {
-                    background-color: var(--secondary);
+                    width: 100%;
                 }
             }
         }
+
+        .cs-nav-button {
+            margin-left: auto;
+            border-radius: 0;
+        }
     }
-}                    
+}
+                                           
 
 /*-- -------------------------- -->
 <---          Banner            -->

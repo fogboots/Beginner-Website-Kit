@@ -42,123 +42,225 @@
     <!--Screen reader skip main nav-->
     <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
 
-    <!-- ============================================ -->
-    <!--                 Navigation                   -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
 
-    <header id="cs-navigation">
-        <div class="cs-container">
-            <!--Nav Logo-->
-            <a href="/index.html" class="cs-logo" aria-label="back to home">
-                <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Flogo-black.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
-            </a>
-            <!--Navigation List-->
-            <nav class="cs-nav" role="navigation">
-                <!--Mobile Nav Toggle-->
-                <button class="cs-toggle" aria-label="mobile menu toggle">
-                    <div class="cs-box" aria-hidden="true">
-                        <span class="cs-line cs-line1" aria-hidden="true"></span>
-                        <span class="cs-line cs-line2" aria-hidden="true"></span>
-                        <span class="cs-line cs-line3" aria-hidden="true"></span>
-                    </div>
-                </button>
-                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-                <div class="cs-ul-wrapper">
-                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                        <li class="cs-li">
-                            <a href="/index.html" class="cs-li-link cs-active">
-                                Home
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="/about.html" class="cs-li-link">
-                                About
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="/portfolio.html" class="cs-li-link">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="/reviews.html" class="cs-li-link">
-                                Reviews
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="/contact.html" class="cs-li-link">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
+<header id="cs-navigation">
+    <!--Nav Logo-->
+    <a href="" class="cs-logo" aria-label="back to home">
+        <img src="https://client-images023.s3.us-east-2.amazonaws.com/DC-Electrical-Services-logo-removebg-preview.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+    </a>
+    <!--Top Bar-->
+    <ul class="cs-top-bar">
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fphone-stroke-green.svg" alt="icon" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Call Us Now</span>
+                <a href="tel:555-555-0234" class="cs-link">(416) 995-4159</a>
+            </div>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fmail-stroke-green.svg" alt="icon" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Send A Message</span>
+                <a href="mailto:Info@email.com" class="cs-link">info@dcelectricalservices.ca</a>
+            </div>
+        </li>
+        <li class="cs-item cs-remove">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fpin-stroke-green.svg" alt="icon" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Visit Us At</span>
+                <a href="" class="cs-link">3416 Dundas Street West, Unit 202</a>
+            </div>
+        </li>
+    </ul>
+    <div class="cs-bottom-bar">
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
                 </div>
-            </nav>
-            <a href="/contact.html" class="cs-button-solid cs-nav-button">Contact Us</a>
-            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-            <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
             </button>
-        </div>
-    </header>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                    <li class="cs-li">
+                        <a href="" class="cs-li-link cs-active">
+                            Home
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="" class="cs-li-link">
+                            Services
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="" class="cs-li-link">
+                            How We Work
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="" class="cs-li-link">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="" class="cs-li-link">
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <a href="" class="cs-button-solid cs-nav-button">Contact Us</a>
+        <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+        <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
+            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+            <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+        </button> -->
+    </div>
+</header>
+                                
 
     <main id="main">
-        <!-- ============================================ -->
-        <!--                    Hero                      -->
-        <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
 
-        <section id="hero-81">
-            <div class="cs-container">
-                <h1 class="cs-title">Construction & Maintenance Experts in New York City</h1>
-                <p class="cs-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At quis donec eget tellus turpis imperdiet aenean libero. 
-                </p>
-                <a href="" class="cs-button-solid">Request Appointment</a>
-            </div>
+<section id="hero-143">
+    <div class="cs-container">
+        <h1 class="cs-title">Expert 24/7 Electrical Services in Toronto</h1>
+        <p class="cs-text">
+            From complex repairs to safety inspections, DC Electrical is the place for all your electrical needs. Contact us today for a free estimate! 
+        </p>
+        <a href="" class="cs-button-solid">Get A Free Estimate Today!</a>
+    </div>
 
-            <!-- Background Image -->
-            <picture class="cs-background">
-                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen-m.jpg">
-                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen.jpg">
-                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen.jpg" alt="kitchen" width="2250" height="1500" aria-hidden="true">
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen-m.jpg">
+        <source media="(min-width: 601px)" srcset="https://client-images023.s3.us-east-2.amazonaws.com/pexels-mark-mccammon-2724749.jpg">
+        <img loading="lazy" decoding="async" src="https://client-images023.s3.us-east-2.amazonaws.com/pexels-mark-mccammon-2724749.jpg" alt="kitchen" width="2250" height="1500" aria-hidden="true">
+    </picture>
+</section>
+
+<!-- ============================================ -->
+<!--                   Services                   -->
+<!-- ============================================ -->
+
+<section id="h-services-81">
+    <ul class="cs-card-group">
+        <li class="cs-item">
+            <picture class="cs-icon">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/toolbox.svg" alt="appliance" width="52" height="52" aria-hidden="true">
             </picture>
-        </section>
+            <h2 class="cs-title">Electrical Installations</h2>
+            <p class="cs-text">
+                We install all electrical appliances including generators, home wiring, panels and more. 
+            </p>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-icon">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/buildings.svg" alt="appliance" width="52" height="52" aria-hidden="true">
+            </picture>
+            <h2 class="cs-title">Electrical Repairs</h2>
+            <p class="cs-text">
+                Let us handle your electrical issues safely and swiftly. We can repair any electrical problems you may face. 
+            </p>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-icon">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/gear.svg" alt="appliance" width="52" height="52" aria-hidden="true">
+            </picture>
+            <h2 class="cs-title">Safety Certifications</h2>
+            <p class="cs-text">
+                Get an ESA permit with us! We'll request an inspection with ESA and get you a permit proving everything in compliance with the Ontario Electrical Safety Code (OESA)!
+            </p>
+        </li>
+    </ul>
+</section>
 
-        <!-- ============================================ -->
-        <!--                   Services                   -->
-        <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                   Services                   -->
+<!-- ============================================ -->
 
-        <section id="h-services-81">
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <picture class="cs-icon">
-                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/toolbox.svg" alt="appliance" width="52" height="52" aria-hidden="true">
-                    </picture>
-                    <h2 class="cs-title">Full Kitchen Remodel</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, dolor enim, elit. 
+<section id="services-469">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Why Choose Us</span>
+            <h2 class="cs-title">We're Only Happy When You Are 100% Satisfied</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia incidunt quia enim mollitia delectus? Perferendis sapiente quaerat quos. Odit quasi similique nobis earum laudantium ad doloribus quos eos quod. Delectus?
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/svg/warranty.svg" loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-item-group">
+                    <h3 class="cs-h3">Warranty For All Servicess</h3>
+                    <p class="cs-item-text">
+                        We provide warranty for every service we offer. Rest assured that you are in capable hands, as we stand by the quality of all our services.
                     </p>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-icon">
-                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/buildings.svg" alt="appliance" width="52" height="52" aria-hidden="true">
-                    </picture>
-                    <h2 class="cs-title">Exterior Repairs</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, dolor enim, elit. 
+                    <a href="" class="cs-link">Read More</a>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/svg/handshake.svg" loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-item-group">
+                    <h3 class="cs-h3">Always At The Right Price</h3>
+                    <p class="cs-item-text">
+                        We offer high-quality work carried out by certified professionals who prioritize doing the job correctly on their first attempt, every time!
                     </p>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-icon">
-                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/gear.svg" alt="appliance" width="52" height="52" aria-hidden="true">
-                    </picture>
-                    <h2 class="cs-title">Utility Maintenance</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, dolor enim, elit. 
+                    <a href="" class="cs-link">Read More</a>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/svg/skilledtechnician.svg" loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-item-group">
+                    <h3 class="cs-h3">Exceptionally Skilled Technicians</h3>
+                    <p class="cs-item-text">
+                        Our goal is to deliver top-tier electrical services carried out by our highly qualified technicians, all at competitive prices.
                     </p>
-                </li>
-            </ul>
-        </section>                     
+                    <a href="" class="cs-link">Read More</a>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/svg/expertise.svg" loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-item-group">
+                    <h3 class="cs-h3">Years of Expertise & Knowledge</h3>
+                    <p class="cs-item-text">
+                        With vast experience, we specialize in all aspects of electrical services for homes, renovations, new builds, commercial and industrial spaces, and retail locations.
+                    </p>
+                    <a href="" class="cs-link">Read More</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+                                                                       
                                 
         <!-- ============================================ -->
         <!--                   About Us                   -->
@@ -170,19 +272,25 @@
                     <!--Mobile Image-->
                     <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg">
                     <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg">
-                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg" alt="room" width="494" height="700">
+                    <source media="(min-width: 601px)" srcset="assets/images/2017-10-10.jpg">
+                    <img loading="lazy" decoding="async" src="assets/images/2017-10-10.jpg" alt="room" width="494" height="700">
                 </picture>
                 <div class="cs-content">
-                    <span class="cs-topper">Who We ARe</span>
-                    <h2 class="cs-title">Stitch Painting Services</h2>
+                    <span class="cs-topper">Who We Are</span>
+                    <h2 class="cs-title">DC Electrical Services</h2>
                     <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        At DC Electrical, we are committed to delivering top-tier electrical services by leveraging 
+                        our extensive knowledge and experience. We consistently strive to provide services at competitive rates without compromising on quality or safety, recognizing 
+                        the importance of affordable, reliable, and expert electrical solutions in both residential and 
+                        commercial sectors.
                     </p>
                     <p class="cs-text">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        Our vast experience encompasses an array of electrical services including homes, 
+                        condominiums, new construction, renovations, as well as commercial and industrial 
+                        spaces, warehouses, and retail locations. At DC Electrical, we don't just promise quality,
+                         we guarantee it, offering warranty for all our services to ensure your peace your mind. 
                     </p>
-                    <a href="" class="cs-button-solid">Get Free Quote</a>
+                    <a href="" class="cs-button-solid">Get Free Quote Today!</a>
                 </div>
             </div>
         </section>
@@ -197,17 +305,24 @@
                     <!--Mobile Image-->
                     <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg">
                     <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg">
-                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg" alt="room" width="494" height="700">
+                    <source media="(min-width: 601px)" srcset="assets/images/pexels-max-rahubovskiy-6186812.jpg">
+                    <img loading="lazy" decoding="async" src="assets/images/pexels-max-rahubovskiy-6186812.jpg" alt="room" width="494" height="700">
                 </picture>
                 <div class="cs-content">
                     <span class="cs-topper">What We Do</span>
-                    <h2 class="cs-title">House Painting Contractors For Oak Harbor</h2>
+                    <h2 class="cs-title">Electrical Services for Toronto, GTA</h2>
                     <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                       For residential clients, we cater to an array of electrical tasks involving homes 
+                       and condominiums, new constructions, and extensive renovations. Our team provides 
+                       comprehensive solutions from wiring installations to repair and maintenance tasks, 
+                       always ensuring that your home is safe and your electrical systems are running efficiently.
                     </p>
                     <p class="cs-text">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        In the commercial and industrial space, we tackle electrical projects of all sizes, 
+                        including work for warehouses and retail locations. Our services include, but are not 
+                        limited to, wiring and rewiring, electrical panel upgrades, lighting solutions, and
+                         preventive maintenance. Our dedication to quality work and adherence to safety regulations
+                          make us the trusted choice for businesses.
                     </p>
                     <a href="" class="cs-button-solid">Get Free Quote</a>
                 </div>
@@ -223,7 +338,7 @@
                 <div class="cs-content">
                     <div class="cs-flex">
                         <span class="cs-topper">Portfolio</span>
-                        <h2 class="cs-title">Our Gallery</h2>
+                        <h2 class="cs-title">Take a Look At Our Work</h2>
                     </div>
                     <div class="cs-button-group">
                         <!--When adding extra galleries, copy and paste the button and make data-filter equal to four, then five, etc. Do the same for the corresponding gallery and it's data attribute-->
@@ -231,10 +346,10 @@
                             Renovations
                         </button>
                         <button class="cs-button" data-filter="two">
-                            Sod
+                            Lighting
                         </button>
                         <button class="cs-button" data-filter="three">
-                            Fencing
+                            Builds
                         </button>
                     </div>
                 </div>
@@ -322,115 +437,87 @@
             </div>
         </section>
                  
-        <!-- ============================================ -->
-        <!--                 Meet The Team                -->
-        <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
 
-        <section id="meet-team-221">
-            <div class="cs-container">
-                <div class="cs-content">
-                    <span class="cs-topper">Meet The Team</span>
-                    <h2 class="cs-title">The People Behind CodeStitch</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
-                    </p>
-                </div>
-                <ul class="cs-card-group">
-                    <li class="cs-item">
-                        <picture class="cs-picture">
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/member1.jpg" alt="portrait" width="275" height="132">
-                        </picture>
-                        <span class="cs-name">John Doe</span>
-                        <span class="cs-job-title">Founder</span>
-                        <p class="cs-item-text">
-                            Former co-founder of CodeSnatch. Early staff at Pixelbit and Co-oder.
-                        </p>
-                        <!-- Social Flexbox -->
-                        <div class="cs-social">
-                            <a href="" class="cs-link" aria-label="Twitter" target="_blank" rel="noopener">
-                                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/twitter-grey.svg" alt="twitter" width="15" height="13">
-                            </a>
-                            <a href="" class="cs-link" aria-label="Linked in" target="_blank" rel="noopener">
-                                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/linkedin-grey.svg" alt="linkedin" width="17" height="16">
-                            </a>
-                        </div>
-                    </li>
-                    <li class="cs-item">
-                        <picture class="cs-picture">
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/member1.jpg" alt="portrait" width="275" height="132">
-                        </picture>
-                        <span class="cs-name">Rusty Shackleford</span>
-                        <span class="cs-job-title">CMO</span>
-                        <p class="cs-item-text">
-                            Former co-founder of CodeSnatch. Early staff at Pixelbit and Co-oder.
-                        </p>
-                        <!-- Social Flexbox -->
-                        <div class="cs-social">
-                            <a href="" class="cs-link" aria-label="Twitter" target="_blank" rel="noopener">
-                                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/twitter-grey.svg" alt="twitter" width="15" height="13">
-                            </a>
-                            <a href="" class="cs-link" aria-label="Linked in" target="_blank" rel="noopener">
-                                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/linkedin-grey.svg" alt="linkedin" width="17" height="16">
-                            </a>
-                        </div>
-                    </li>
-                    <li class="cs-item">
-                        <picture class="cs-picture">
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/member1.jpg" alt="portrait" width="275" height="132">
-                        </picture>
-                        <span class="cs-name">Joe Shmo</span>
-                        <span class="cs-job-title">CFO</span>
-                        <p class="cs-item-text">
-                            Former co-founder of CodeSnatch. Early staff at Pixelbit and Co-oder.
-                        </p>
-                        <!-- Social Flexbox -->
-                        <div class="cs-social">
-                            <a href="" class="cs-link" aria-label="Twitter" target="_blank" rel="noopener">
-                                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/twitter-grey.svg" alt="twitter" width="15" height="13">
-                            </a>
-                            <a href="" class="cs-link" aria-label="Linked in" target="_blank" rel="noopener">
-                                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Meet-Team/linkedin-grey.svg" alt="linkedin" width="17" height="16">
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-                <a href="" class="cs-button-solid">Read More</a>
-            </div>
-        </section>
+<section id="cta-697">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">24/7 Emergency Line </br> Cell: (647) 828-4575</h2>
+            <a href="" class="cs-button-solid">Tap to Call Us</a>
+        </div>
+    </div>
+    <!--SVG Waves Background-->
+    <img class="cs-background" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fwaves-3.svg" alt="wave graphic" width="1920" height="318" loading="lazy" decoding="async" aria-hidden="true">
+</section>
                                 
-        <!-- ============================================ -->
-        <!--                   Reviews                    -->
-        <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
 
-        <section id="reviews-727">
-            <div class="cs-container">
-                <div class="cs-content">
-                    <span class="cs-topper">Testimonials</span>
-                    <h2 class="cs-title">Trusted by Thousand of People & Companies</h2>
-                    <p class="cs-text">
-                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
-                    </p>
+<section id="reviews-399">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Testimonials</span>
+            <h2 class="cs-title">We Strive For 100% Customer Satisfaction</h2>
+            <p class="cs-text">
+                At DC Electrical, let us help you solve problems so that you can focus on your mission. We support businesses through periods of expansion, succession.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <!--Blue Quote-->
+                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/quote-blue.svg" decoding="async" alt="quote icon" width="40" height="33">
+                <!--White Quote-->
+                <img class="cs-quote-white" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/quotes-white.svg" decoding="async" alt="quote icon" width="60" height="55">
+                <p class="cs-review">
+                    We are very pleased with the service from Adrian!  He was very professional and extremely knowledgeable .  It was an emergency repair and he came very quickly in the evening hours.  He was also very polite, caring and compassionate as were quite upset.
+                </p>
+                <div class="cs-flex-group">
+                    
+                    <span class="cs-name">
+                        Victoria Lammers
+                        <span class="cs-job">Google Review</span>
+                    </span>
                 </div>
-                <ul class="cs-card-group">
-                    <li class="cs-item">
-                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/yellow-quote.svg" alt="quote icon" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
-                        <h3 class="cs-h3">Loving the color!</h3>
-                        <p class="cs-item-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores iste vitae, aliquam temporibus modi libero dolorem rerum? Dolore soluta eligendi mollitia. Doloribus et exercitationem cupiditate?
-                        </p>
-                        <span class="cs-name">Daniel</span>
-                    </li>
-                    <li class="cs-item">
-                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/yellow-quote.svg" alt="quote icon" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
-                        <h3 class="cs-h3">Affordable</h3>
-                        <p class="cs-item-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores iste vitae, aliquam temporibus modi libero dolorem rerum? Dolore soluta eligendi mollitia. Doloribus et exercitationem cupiditate?
-                        </p>
-                        <span class="cs-name">Daniel</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
+            </li>
+            <li class="cs-item">
+                <!--Blue Quote-->
+                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/quote-blue.svg" decoding="async" alt="quote icon" width="40" height="33">
+                <!--White Quote-->
+                <img class="cs-quote-white" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/quotes-white.svg" decoding="async" alt="quote icon" width="60" height="55">
+                <p class="cs-review">
+                    Honestly do yourself a favour and call Adrian. We needed a ton of electrical work done and he exceeded our expectations, at a competitive price. He was also a pleasure to have in our home. Thank you again!
+                </p>
+                <div class="cs-flex-group">
+                    
+                    <span class="cs-name">
+                        Allie Kusnierczyk
+                        <span class="cs-job">Google Review</span>
+                    </span>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!--Blue Quote-->
+                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/quote-blue.svg" decoding="async" alt="quote icon" width="40" height="33">
+                <!--White Quote-->
+                <img class="cs-quote-white" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/quotes-white.svg" decoding="async" alt="quote icon" width="60" height="55">
+                <p class="cs-review">
+                    Everything was explained from the beginning and the end result exceeded my expectations. Great company to work with. Very fast, reliable and professional. Ardian has great knowledge and high moral standards. Will only work with his company for all my electrical needs.
+                </p>
+                <div class="cs-flex-group">
+                    
+                    <span class="cs-name">
+                         Ionut V
+                        <span class="cs-job">Google Review</span>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+                                
                                 
 
         <!-- ============================================ -->
@@ -466,11 +553,8 @@
             <!-- Logo Group -->
             <div class="cs-logo-group">
                 <a aria-label="go back to home" class="cs-logo" href="">
-                    <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Footer/logo-light.svg" alt="logo" width="240" height="32">
+                    <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="https://client-images023.s3.us-east-2.amazonaws.com/DC-Electrical-Services-logo-removebg-preview.png" alt="logo" width="240" height="32">
                 </a>
-                <p class="cs-text">
-                    Etiam nulla ultrices consequat, posuere nulla. Ac iaculis lorem phasellus ultrices adipiscing viverra sit ut quam. In diam mattis elementum diam at sed ultricies.
-                </p>
             </div>
             <!-- Links -->
             <ul class="cs-nav">
@@ -499,10 +583,10 @@
                     <span class="cs-header">Contact</span>
                 </li>
                 <li class="cs-contact-li">
-                    <a class="cs-contact-link" href="tel: 123-456-7890">(123) 456-7890</a>
+                    <a class="cs-contact-link" href="tel: 123-456-7890">(416) 995-4159</a>
                 </li>
                 <li class="cs-contact-li">
-                    <a class="cs-contact-link" href="mailto:info@codestitch.com">info@codestitch.com</a>
+                    <a class="cs-contact-link" href="mailto:info@codestitch.com">info@dcelectricalservices.ca</a>
                 </li>
                 <!-- Social Media -->
                 <li class="cs-contact-li cs-social-group">
