@@ -41,3 +41,5 @@ document.querySelector('#cs-navigation').classList.add('scroll')
     document.querySelector('#cs-navigation').classList.remove('scroll')
     }
 });
+
+console.log("test")
