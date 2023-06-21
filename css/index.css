@@ -133,7 +133,7 @@
     margin: auto;
     min-width: 9.375rem;
     padding: 0 1.5rem;
-    background-color: var(--primary);
+    background-color: var(--primaryLight);
     border-radius: 0.25rem;
     display: inline-block;
     position: relative;
