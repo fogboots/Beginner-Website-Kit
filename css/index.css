@@ -106,7 +106,7 @@
     height: clamp(0.25rem, 0.8vw, 0.5rem);
     /* 16px - 24px */
     margin: clamp(1rem, 4vw, 1.5rem) auto clamp(1rem, 4vw, 1.5rem);
-    background: var(--primary);
+    background: var(--primaryLight);
     opacity: 1;
     position: relative;
     display: block;
@@ -131,8 +131,6 @@
     text-decoration: none;
     font-weight: 700;
     margin: auto;
-    color: #ffffff;
-    border: 1px solid #EE2930;
     min-width: 9.375rem;
     padding: 0 1.5rem;
     background-color: var(--primary);
