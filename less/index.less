@@ -555,12 +555,11 @@
         .cs-picture {
             display: block;
             position: relative;
-            width: 100%;
+            width: 94%;
             height: 300/16rem;
 
             img {
-                border: 3px solid var(--primary);
-                border-radius: 20px;
+                border-radius: 10px;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -642,7 +641,7 @@
 
         .cs-picture {
             /* 16px - 28px, added margin left and bottom to cs-picture so it pushes away by the same amount the yellow box element overlaps it left and bottom. This maintains consistent spacing left and bottom */
-            margin: 0 clamp(1rem, 2.4vw, 1.75rem) clamp(1rem, 2.4vw, 1.75rem) 0;
+            margin: 0 clamp(1rem, 2.4vw, 1.75rem) 20px clamp(1rem, 2.4vw, 1.75rem) 20px;
 
             &:before {
                 /* yellow box */
