@@ -132,6 +132,7 @@
     font-weight: 700;
     margin: auto;
     color: #ffffff;
+    border: 1px solid #EE2930;
     min-width: 9.375rem;
     padding: 0 1.5rem;
     background-color: var(--primary);
@@ -407,7 +408,7 @@
     margin: auto;
     /* 20px - 24px */
     margin-bottom: clamp(1.25rem, 5vw, 1.5rem);
-    background: var(--primary);
+    background: var(--primaryLight);
     border-radius: 50%;
     display: flex;
     justify-content: center;
